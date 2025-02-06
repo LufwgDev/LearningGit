@@ -1,0 +1,157 @@
+//I'm Following this HolaMundo tutorial https://www.youtube.com/watch?v=VdGzPZ31ts8
+
+//Check Git's installed version
+git --version
+
+//Config name
+git config --global user.name "LufwgDev"
+
+//Config email
+git config --global user.email lufwg@proton.me
+
+//Indicate to git that vscode is your text editor by default
+//the "--wait" option is so that the terminal stays waiting until you close your text editor
+git config --global core.editor "code --wait"
+
+//To see your global configuration file
+ git config --global -e
+
+//hint: Waiting for your editor to close the file... code --wait: line 1: code: command not found
+//error: there was a problem with the editor 'code --wait'
+code --version
+//bash: code: command not found
+//maybe is't because I just installed vscode, restart the pc again
+code --version
+//1.97.0
+//33fc5a94a3f99ebe7087e8fe79fbe1d37a251016
+//x64
+
+//On Windows Every time you add a line break, the OS will add thw special characters to be able to mark that place as a line break
+//it use the special characters "Carriage Return" or "CR" and also "Line Feed" or "LF" 
+//On linux or Mac the special character that is added is only the "LF"
+//If you are working with Windows and you want to upload code to a repository, you will have to eliminate the special character "CR"
+//and if you want to download code from the repository, you should add the "CR" character
+//the linux and Mac users are not adding the "CR", but if for some reason the user (due to the text editor that is using or because manually enterded the "CR" git should also be able to eliminate it
+
+//in Windows
+git config --global core.autocrlf true
+//in linux or Mac
+git config --global core.autocrlf input
+//list of all configuration commands
+git config -h
+
+//to clear the terminal
+clear
+
+//L i S t all the files and folders that are located in the directory (folder) you are in
+ls
+
+//P lase  W here  D af*ck  i am
+pwd
+
+//move to another folder (inside the folder where you are)
+//you can use tab to complete the name 
+cd Desktop/
+
+//to leave this folder (back to the folder that contains the actual)
+cd ..
+
+//create a folder (or  M a K e  a  DIR ectory)
+mkdir "LearningGit"
+
+//
+cd LearningGit/
+
+//INITialize the project
+git init
+
+//to show hidden files (like .git/)
+ls -able
+
+//to enter to the .git folder
+cd .git/
+
+//to see all the files that are used in git to manage your projects
+ls -a
+
+//
+cd ..
+
+//The WorkFlow is Computer -> Stage -> Commmit -> Server
+//you can add delete, add or modify files and folders in your computer
+//then, select the files you want to move (add) to "Stage"
+
+//Stage it's like a draft of the list of changes you want to do, not only add or modified files, also the record of the files deleted
+//you will be able to remove these elements from this stage
+
+//then when you are sure about the changes you want to commit, to move to "Commit"
+
+//finally upload the changes that you have committed to a server 
+
+//open vscode
+code .
+
+//to show the current status of your repository
+git status
+
+//On branch master
+//
+//No commits yet
+//
+//Untracked files:
+//  (use "git add <file>..." to include in what will be committed)
+//        Commands.log
+//        file1.txt
+//
+//nothing added to commit but untracked files present (use "git add" to track)
+
+//git does not track all files you put in your project by default, to select them we use
+//to add a file
+git add file1.txt
+
+//to select all the files with a extension ".extension"
+
+git add .log
+//fatal: pathspec '.log' did not match any files
+
+git add .txt
+//fatal: pathspec '.txt' did not match any files
+
+//:c
+
+//to add all the untracked files
+git add .
+
+//the files are now in Stage
+
+//to add more than one file to our Stage
+git add file2.txt file3.txt 
+
+//we have modified file2.txt and file3.txt
+
+//
+git status
+//On branch master
+//
+//No commits yet
+//
+//Changes to be committed:
+//  (use "git rm --cached <file>..." to unstage)
+//        new file:   Commands.log
+//        new file:   file1.txt
+//        new file:   file2.txt
+//        new file:   file3.txt
+//
+//Changes not staged for commit:
+//  (use "git add <file>..." to update what will be committed)
+//  (use "git restore <file>..." to discard changes in working directory)
+//        modified:   Commands.log
+//        modified:   file2.txt
+//        modified:   file3.txt
+
+//the most recent chages in file2 and file3 are not in Stage. In Stage are only the modifications until the last time we use the command "git add" with every file,
+//so if we commit the changes it will be commited only those that the file has at the moment of being added to Stage
+
+//to update all the changes to Stage we use again
+git add file2.txt file3.txt 
+
