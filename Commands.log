@@ -219,3 +219,49 @@ git status
 //  (use "git restore --staged <file>..." to unstage)
 //        modified:   Commands.log
 //        deleted:    file3.txt
+
+//git commit -m "Deleting file3.txt"
+//[main 16d7871] Deleting file3.txt
+// 2 files changed, 56 insertions(+), 2 deletions(-)
+// delete mode 100644 file3.txt
+
+//
+git status
+
+//On branch main
+//Your branch is ahead of 'origin/main' by 2 commits.
+//  (use "git push" to publish your local commits)
+//
+//nothing to commit, working tree clean
+
+// to remove a file and at the same time add this change to Stage
+git rm file2.txt
+
+//to remove a change form Stage 
+git restore --staged file2.txt
+
+//
+git status
+//On branch main
+//Your branch is ahead of 'origin/main' by 2 commits.
+//  (use "git push" to publish your local commits)
+//
+//Changes to be committed:
+//  (use "git restore --staged <file>..." to unstage)
+//        modified:   Commands.log
+//
+//Changes not staged for commit:
+//  (use "git add/rm <file>..." to update what will be committed)
+//  (use "git restore <file>..." to discard changes in working directory)
+//        deleted:    file2.txt
+
+//
+ls
+//Commands.log  file1.txt
+
+//to discard changes (in the computer not in Stage)
+git restore file2.txt
+
+//
+ls
+//Commands.log  file1.txt  file2.txt
