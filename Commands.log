@@ -155,3 +155,12 @@ git status
 //to update all the changes to Stage we use again
 git add file2.txt file3.txt 
 
+
+// to commit all the changes in Stages
+git commit -m "Initial Commit"
+
+//
+git add file2.txt 
+
+//another  way to commit
+git commit
