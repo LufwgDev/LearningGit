@@ -584,3 +584,6 @@ git status
 git branch
 //* main
 
+//create a new branch
+git checkout -b "B-branch"
+//Switched to a new branch 'B-branch'
