@@ -361,3 +361,116 @@ git status
 //  (use "git restore --staged <file>..." to unstage)
 //        modified:   Commands.log
 //        renamed:    File.txt -> file1.txt
+
+//.env file is created
+
+//git status
+//On branch main
+//Your branch is ahead of 'origin/main' by 1 commit.
+//  (use "git push" to publish your local commits)
+//
+//Changes not staged for commit:
+//  (use "git add <file>..." to update what will be committed)
+//  (use "git restore <file>..." to discard changes in working directory)
+//        modified:   Commands.log
+//
+//Untracked files:
+//  (use "git add <file>..." to include in what will be committed)
+//        .env
+//
+//no changes added to commit (use "git add" and/or "git commit -a")
+
+//create a new file: .gitignore
+
+//ignore files so that they are never included in our git repositories
+git add .gitignore
+//commit
+git commit -m "adding .GitIgnore file"
+
+//[main e8a77ea] adding .GitIgnore file
+// 1 file changed, 2 insertions(+)
+// create mode 100644 .gitignore
+
+//
+git status 
+On branch main
+//Your branch is ahead of 'origin/main' by 2 commits.
+//  (use "git push" to publish your local commits)
+//
+//Changes not staged for commit:
+//  (use "git add <file>..." to update what will be committed)
+//  (use "git restore <file>..." to discard changes in working directory)
+//        modified:   .gitignore
+//        modified:   Commands.log
+//        modified:   file1.txt
+//        modified:   file2.txt
+//
+//Untracked files:
+//  (use "git add <file>..." to include in what will be committed)
+//        MoreBacons.txt
+//
+//no changes added to commit (use "git add" and/or "git commit -a")
+
+
+//an alternative to git status
+git status -s
+
+// M .gitignore
+//(red M)
+
+// M Commands.log
+//(red M)
+
+// M file1.txt
+//(red M)
+
+// M file2.txt
+//(red M)
+
+//?? MoreBacons.txt
+//red "??"
+
+//
+git add .gitignore
+
+//M  .gitignore
+//(green M)
+
+// M Commands.log
+//(red M)
+
+// M file1.txt
+//(red M)
+
+// M file2.txt
+//(red M)
+
+//?? MoreBacons.txt
+//red "??"
+
+//
+git add MoreBacons.txt
+
+//
+git status -s
+
+M  .gitignore
+//(green M)
+
+ M Commands.log
+//(red M)
+
+
+
+A  MoreBacons.txt
+//(green A)
+
+
+ M file1.txt
+//(red M)
+
+
+ M file2.txt
+//(red M)
+
+//
