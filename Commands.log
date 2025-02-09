@@ -159,6 +159,50 @@ git add file2.txt file3.txt
 // to commit all the changes in Stages
 git commit -m "Initial Commit"
 
+//[master (root-commit) 45c563d] Initial Commit
+// 4 files changed, 160 insertions(+)
+// create mode 100644 Commands.log
+// create mode 100644 file1.txt
+// create mode 100644 file2.txt
+// create mode 100644 file3.txt
+
+
+
+
+
+
+git remote add origin https://github.com/LufwgDev/LearningGit.git
+
+git push -u origin main
+
+//error: src refspec main does not match any
+//error: failed to push some refs to 'https://github.com/LufwgDev/LearningGit.git'
+
+//
+git status
+//On branch master
+//nothing to commit, working tree clean
+
+//
+git branch -M main
+
+git push -u origin main
+
+//info: please complete authentication in your browser...
+//Enumerating objects: 6, done.
+//Counting objects: 100% (6/6), done.
+//Delta compression using up to 20 threads
+//Compressing objects: 100% (3/3), done.
+//Writing objects: 100% (6/6), 2.20 KiB | 2.20 MiB/s, done.
+//Total 6 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+//To https://github.com/LufwgDev/LearningGit.git
+// * [new branch]      main -> main
+//branch 'main' set up to track 'origin/main'.
+
+
+
+
+
 //
 git add file2.txt 
 
@@ -265,3 +309,55 @@ git restore file2.txt
 //
 ls
 //Commands.log  file1.txt  file2.txt
+
+//rename a file
+mv file1.txt File.txt
+
+//
+git status
+
+//On branch main
+//Your branch is up to date with 'origin/main'.
+//
+//Changes not staged for commit:
+//  (use "git add/rm <file>..." to update what will be committed)
+//  (use "git restore <file>..." to discard changes in working directory)
+//        modified:   Commands.log
+//        deleted:    file1.txt
+//
+//Untracked files:
+//  (use "git add <file>..." to include in what will be committed)
+//  
+//        File.txt
+//
+//no changes added to commit (use "git add" and/or "git commit -a")
+
+//git add file1.txt File.txt
+
+//
+git status
+//On branch main
+//Your branch is up to date with 'origin/main'.
+//
+//Changes to be committed:
+//  (use "git restore --staged <file>..." to unstage)
+//        renamed:    file1.txt -> File.txt
+//
+//Changes not staged for commit:
+//  (use "git add <file>..." to update what will be committed)
+//  (use "git restore <file>..." to discard changes in working directory)
+//        modified:   Commands.log
+
+//rename and add to stage at the same time
+git mv File.txt file1.txt
+
+//
+git status
+
+//On branch main
+//Your branch is up to date with 'origin/main'.
+//
+//Changes to be committed:
+//  (use "git restore --staged <file>..." to unstage)
+//        modified:   Commands.log
+//        renamed:    File.txt -> file1.txt
