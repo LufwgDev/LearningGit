@@ -474,3 +474,113 @@ A  MoreBacons.txt
 //(red M)
 
 //
+git commit -m "Showing short-version Status"
+//[main f8d549a] Showing short-version Status
+// 5 files changed, 117 insertions(+), 3 deletions(-)
+// create mode 100644 MoreBacons.txt
+
+//
+git diff
+
+//diff --git a/file2.txt b/file2.txt
+//index f0a7c55..a93bc0f 100644
+//--- a/file2.txt
+//+++ b/file2.txt
+//@@ -1,2 +1,3 @@
+// Other Happy Piggy :D
+//-And Another Happy Bacon c: ₍˄•͈⚇•͈˄₎
+//\ No newline at end of file
+//+saddy bacon :c
+//:
+
+//to exit press "q"
+
+//diff in stage
+git diff --staged
+
+//to review all the repository history
+git log
+
+//commit f8d549a21fb5cc70b3c5baed98be90fb695c040f (HEAD -> main)
+//Author: LufwgDev <lufwg@proton.me>
+//Date:   Sun Feb 9 12:52:59 2025 -0500
+//
+//    Showing short-version Status
+//
+//commit e8a77eabdc10df61124d4bf6bbecab4bae6e7c91
+//Author: LufwgDev <lufwg@proton.me>
+//Date:   Sun Feb 9 12:11:39 2025 -0500
+//
+//    adding .GitIgnore file
+//
+//commit 15399cd2f497a9f64eeb65b0d9444e873c2e6a8f
+//Author: LufwgDev <lufwg@proton.me>
+//Date:   Sun Feb 9 11:54:31 2025 -0500
+//
+//    returning the name of the file
+//
+//commit d0e386ccd67ff8ad88199e81ac2a9dc0e866eff8 (origin/main, origin/HEAD)
+//Author: LufwgDev <lufwg@proton.me>
+//Date:   Sat Feb 8 21:33:09 2025 -0500
+//
+//    renaming a File
+
+//
+git log --oneline
+//f8d549a (HEAD -> main) Showing short-version Status
+//e8a77ea adding .GitIgnore file
+//15399cd returning the name of the file
+//d0e386c (origin/main, origin/HEAD) renaming a File
+//e67b023 other changes...
+//16d7871 Deleting file3.txt
+//5b9438f Adding Another Happy Bacon
+//45c563d Initial Commit
+
+//
+git status
+//On branch main
+//Your branch is ahead of 'origin/main' by 3 commits.
+//  (use "git push" to publish your local commits)
+//
+//Changes to be committed:
+//  (use "git restore --staged <file>..." to unstage)
+//        modified:   Commands.log
+//        modified:   file2.txt
+
+//
+git restore --staged file2.txt
+
+//
+git status
+
+//On branch main
+//Your branch is ahead of 'origin/main' by 3 commits.
+//  (use "git push" to publish your local commits)
+//
+//Changes to be committed:
+//  (use "git restore --staged <file>..." to unstage)
+//        modified:   Commands.log
+//
+//Changes not staged for commit:
+//  (use "git add <file>..." to update what will be committed)
+//  (use "git restore <file>..." to discard changes in working directory)
+//        modified:   file2.txt
+
+//
+git restore file2.txt
+
+//
+git status
+
+//On branch main
+//Your branch is ahead of 'origin/main' by 3 commits.
+//  (use "git push" to publish your local commits)
+//
+//Changes to be committed:
+//  (use "git restore --staged <file>..." to unstage)
+//        modified:   Commands.log
+
+//check which branch we are
+git branch
+//* main
+
