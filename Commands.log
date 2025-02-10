@@ -632,4 +632,24 @@ git log --oneline
 //45c563d Initial Commit
 
 
+//show the content of a file
+cat file2.txt
 
+//changing the branch
+git checkout main
+//Switched to branch 'main'
+//Your branch is ahead of 'origin/main' by 4 commits.
+//  (use "git push" to publish your local commits)
+
+//
+cat file2.txt
+//Other Happy Piggy :D
+//And Another Happy Bacon c: ₍˄•͈⚇•͈˄₎
+
+//YOU NEED TO STAY IN MAIN BRANCH TO
+git merge B-branch
+//Updating 9f5f93d..42ad18c
+//Fast-forward
+// Commands.log | 49 +++++++++++++++++++++++++++++++++++++++++++++++++
+// file2.txt    |  3 ++-
+// 2 files changed, 51 insertions(+), 1 deletion(-)
