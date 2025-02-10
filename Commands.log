@@ -580,6 +580,18 @@ git status
 //  (use "git restore --staged <file>..." to unstage)
 //        modified:   Commands.log
 
+git commit -m "restore changes again"
+//[main 9f5f93d] restore changes again
+// 1 file changed, 110 insertions(+)
+
+//
+git status
+//On branch main
+//Your branch is ahead of 'origin/main' by 4 commits.
+//  (use "git push" to publish your local commits)
+//
+//nothing to commit, working tree clean
+
 //check which branch we are
 git branch
 //* main
@@ -587,3 +599,37 @@ git branch
 //create a new branch
 git checkout -b "B-branch"
 //Switched to a new branch 'B-branch'
+
+//
+git branch
+//* B-branch
+//  main
+
+git status
+//On branch B-branch
+//Changes not staged for commit:
+//  (use "git add <file>..." to update what will be committed)
+//  (use "git restore <file>..." to discard changes in working directory)
+//        modified:   Commands.log
+//        modified:   file2.txt
+//
+//no changes added to commit (use "git add" and/or "git commit -a")
+
+git commit -m "updating file2.txt"
+//[B-branch 656720a] updating file2.txt
+// 2 files changed, 5 insertions(+), 1 deletion(-)
+
+git log --oneline
+//656720a (HEAD -> B-branch) updating file2.txt
+//9f5f93d (main) restore changes again
+//f8d549a Showing short-version Status
+//e8a77ea adding .GitIgnore file
+//15399cd returning the name of the file
+//d0e386c (origin/main, origin/HEAD) renaming a File
+//e67b023 other changes...
+//16d7871 Deleting file3.txt
+//5b9438f Adding Another Happy Bacon
+//45c563d Initial Commit
+
+
+
