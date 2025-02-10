@@ -653,3 +653,35 @@ git merge B-branch
 // Commands.log | 49 +++++++++++++++++++++++++++++++++++++++++++++++++
 // file2.txt    |  3 ++-
 // 2 files changed, 51 insertions(+), 1 deletion(-)
+
+//to connect the code for the first time to the repository in the cloud
+git remote add origin https://github.com/LufwgDev/LearningGit.git
+//error: remote origin already exists.
+
+
+//to upload the code to the repository
+
+//he said that -u is to create the main branch in the repository but the first time i tried
+git push -u origin main
+
+//error: src refspec main does not match any
+//error: failed to push some refs to 'https://github.com/LufwgDev/LearningGit.git'
+
+//So as I got that errors I use this command suggested in the empty repository page
+
+git branch -M main
+
+//and then try again 
+git push -u origin main
+
+
+//Enumerating objects: 29, done.
+//Counting objects: 100% (2  9/29), done.
+//Delta compression using up to 8 threads
+//Compressing objects: 100% (22/22), done.
+//Writing objects: 100% (26/26), 5.93 KiB | 337.00 KiB/s, done.
+//Total 26 (delta 11), reused 0 (delta 0), pack-reused 0 (from 0)
+//remote: Resolving deltas: 100% (11/11), done.
+//To https://github.com/LufwgDev/LearningGit.git
+//   d0e386c..8bfe15f  main -> main
+//branch 'main' set up to track 'origin/main'.
